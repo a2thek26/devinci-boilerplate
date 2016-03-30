@@ -1,0 +1,155 @@
+/**
+ * {less} Structure
+ *
+ * @package Devinci Boilerplate
+ * _structure.less
+ */
+
+html { overflow-x:hidden;
+	@media(@sm-min) { overflow-x:auto; }
+}
+
+html, body { font-weight:@font-weight-base;
+	@media(@sm-min) { font-size:@font-size-base; }
+}
+
+body {
+	cursor: default;
+	padding-top: (@navbar-height + 1);
+	overflow-x: hidden;
+	&.modal-open {
+		overflow: hidden;
+	}
+	@media (@sm-max) {
+		font-size: (@font-size-base - 2.5);
+		h1, .h1 {
+			font-size: floor(((@font-size-base - 4) * 2.6));
+		}
+
+		h2, .h2 {
+			font-size: floor(((@font-size-base - 5) * 2.15));
+		}
+
+		h3, .h3 {
+			font-size: floor(((@font-size-base - 4) * 1.7));
+		}
+
+		h4, .h4 {
+			font-size: floor(((@font-size-base - 4) * 1.25));
+		}
+
+		h5, .h5 {
+			font-size: @font-size-base - 1;
+		}
+
+		h6, .h6 {
+			font-size: floor(((@font-size-base - 1) * 0.85));
+		}
+	}
+
+	/**
+	 * Header
+	 *
+	 * @subpackage _structure.less
+	 */
+	header.navbar {
+		transform: translateZ(0);
+		@media (@sm-min) {
+			left: 0 !important;
+			right: 0 !important;
+		}
+		.navbar-toggle {
+			margin-right: 0;
+		}
+
+		&.navbar {
+			font-size: @font-size-small;
+			font-weight: @font-weight-bold;
+			text-transform: uppercase;
+			transform: translateY(0);
+			transition: all @time-base;
+			margin-bottom: 0;
+			&.is-shown {
+				transform: translateY(0);
+			}
+			&.is-hidden {
+				transform: translateY(-100%);
+			}
+			&.canvas-slid, &.canvas-sliding {
+				transform: translateY(0);
+			}
+
+			.navbar-nav {
+				margin-top: 0;
+			}
+
+			.navbar-icon-toggle {
+				.navbar-toggle;
+				.animation-scale-up;
+				.animation-properties;
+				display: inline-block;
+				text-align: center;
+				.square(@navbar-height);
+				.fa-icon();
+				position: relative;
+				border: 0;
+				outline: none;
+				background-color: @transparent;
+				transition: transform @time-base, color @time-base;
+				margin: 0 0 0 @padding-sm;
+				padding: 0;
+				&.active {
+					.animation-scale-down;
+					.animation-properties;
+					&, &:hover {
+						color: @brand-danger;
+					}
+					&:before {
+						content: @fa-var-heart;
+					}
+				}
+				&:before {
+					font-size: @font-size-base;
+					content: @fa-var-heart-o;
+				}
+				&:hover {
+					color: @blue;
+					background-color: @transparent;
+					&:before {
+						content: @fa-var-heart;
+					}
+				}
+			}
+
+		}
+
+		&.navbar-default {
+			.navbar-nav {
+				margin-top: 0;
+				margin-bottom: 0;
+			}
+			.logo-text {
+				fill: @navbar-default-link-color;
+			}
+			.navbar-icon-toggle {
+				color: @navbar-default-link-color;
+			}
+		}
+
+		&.navbar-inverse {
+			.logo-text {
+				fill: @white;
+			}
+			.navbar-icon-toggle {
+				color: @navbar-inverse-link-color;
+			}
+		}
+
+		.navbar-right {
+			@media (@sm-max) {
+				display: none;
+			}
+		}
+
+	}
+}

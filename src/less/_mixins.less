@@ -1,0 +1,124 @@
+/**
+ * {less} Mixins
+ *
+ * @package Devinci Boilerplate
+ * _mixins.less
+ */
+
+
+/**
+ * Build @font-face
+ *
+ * Pass weight as false to ignore font weights
+ * @vars {@family}, {@path}, {@weight}, {@style}
+ * @subpackage _mixins.less
+ */
+.typeface(@family, @path, @weight: normal, @style: normal) {
+	@font-face{ font-family:@family; font-weight:@weight; font-style:@style;
+		src:url('@{path}.eot');
+		src:url('@{path}.eot?#iefix') format('embedded-opentype'),
+		url('@{path}.woff') format('woff'),
+		url('@{path}.ttf') format('truetype'),
+		url('@{path}.svg#@{family}') format('svg');
+	}
+}
+
+
+/**
+ * Custom grid gutter
+ *
+ * Use on container with bootstrap row & col markup
+ * @vars {@gutter-width} {@breakpoint}
+ * @subpackage _mixins.less
+ */
+.expand-gutter(@gutter-width: @grid-gutter-large, @breakpoint: @sm-min) {
+	@media(@breakpoint) { .container-fixed(@gutter-width);
+		.row { .make-row(@gutter-width);
+			[class^="col-"], [class*=" col-"] { padding-left:@gutter-width; padding-right:@gutter-width;
+				&:first-child { padding-left:(@grid-gutter-width / 2); }
+				&:last-child { padding-right:(@grid-gutter-width / 2); }
+			}
+		}
+	}
+}
+
+
+/**
+ * Equalize column heights
+ *
+ * @vars {@viewport}
+ * @subpackage _mixins.less
+ */
+.equalize-columns(@breakpoint: @sm-min) {
+	@media(@breakpoint) { display:table; padding-left:0px; padding-right:0px;
+		.row { display:table-row;
+			[class^="col-"], [class*=" col-"] { display:table-cell; float:none; vertical-align:middle; }
+		}
+	}
+}
+
+
+/**
+ * Placeholder
+ *
+ * @subpackage _mixins.less
+ */
+.lowercase-placeholder() {
+	::-webkit-input-placeholder { text-transform:lowercase; }
+	::-moz-placeholder { text-transform:lowercase; }
+	:-ms-input-placeholder {text-transform:lowercase; }
+}
+
+
+/**
+ * Typewriter type text
+ *
+ * @vars {@color}, {@background-color}
+ * @subpackage _mixins.less
+ */
+.typewriter(@color: @white, @background: fade(@white, 30%)) {
+	display:inline; font-size:@font-size-small; color:@color; background-color:@background; box-shadow:-4px 0 0 0 @background, 4px 0 0 0 @background; padding-top:.03em; padding-bottom:.04em; margin:0;
+	@media(@sm-min) { font-size:@font-size-small; line-height:1.95; padding:3px 0 4px 0; }
+	@media(@md-min) { font-size:@font-size-base; }
+}
+
+
+/**
+ * Custom grid count
+ *
+ * @subpackage _mixins.less
+ */
+.unique-grid(@columns: @columns, @grid-columns: @grid-columns, @gutter: @grid-gutter-width) {
+	position: relative;
+	float: left;
+	width: percentage((@columns / @grid-columns));
+	min-height: 1px;
+	padding-left:  (@gutter / 2);
+	padding-right: (@gutter / 2);
+}
+
+
+/**
+ * Circle
+ *
+ * @subpackage _mixins.less
+ */
+.circle(@size: 50px, @background: @orange, @color: @white, @padding: 0) {
+	.size(@size, @size); transform-origin:center; color:@color; background-color:@background; border-radius:50%; overflow:hidden; padding:@padding;
+}
+
+
+/**
+ * Tags
+ *
+ * @subpackage _mixins.less
+ */
+.tag(@bg: @white, @color: lighten(@gray-light, 10%), @hole: @breadcrumb-bg) {
+	color:@color; background:@bg; font-size:11px; line-height:12px; text-transform:lowercase; display:inline-block; position:relative; text-decoration:none; margin:0 2px @padding-xs 10px; padding:4px 10px; transition:@base-transition;
+	&:before { content:''; width:1px; height:1px; top:0; left:-16px; position:absolute; border-color:transparent @bg transparent transparent; border-image:none; border-style:solid; border-width:10px 8px; transition:@base-transition; }
+	&:after { content:''; width:4px; height:4px; top:8px; left:-1px; position:absolute; z-index:3; background-color:@hole; border-radius:5px; transition:@base-transition; }
+	&:hover { background:@color; color:@bg; text-decoration:none;
+		&:before { border-color:transparent @color transparent transparent; }
+		&:after { background-color:@bg; }
+	}
+}

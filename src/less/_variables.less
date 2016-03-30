@@ -1,0 +1,285 @@
+/**
+ * {less} Variables
+ *
+ * @package Devinci Boilerplate
+ * @uses Bootstrap 3.3
+ * Overrides bootstrap's default variables.less
+ * _variables.less
+ */
+
+
+/**
+ * Iconography
+ *
+ * @subpackage _variables.less
+ */
+@fa-css-prefix: fa;
+@font-path:     @icon-font-path;
+@fa-font-path: '@{icon-font-path}font-awesome';
+
+/**
+ * SVG
+ *
+ * @subpackage _variables.less
+ */
+@svg-logo-ratio:  1.625;
+@svg-enjoy-ratio: 1.9145;
+
+
+/**
+ * Media queries
+ *
+ * @subpackage _variables.less
+ */
+@media-screen-xs-max: (@screen-xs-min - 1);
+@media-screen-sm-max: (@screen-sm-min - 1);
+@media-screen-md-max: (@screen-md-min - 1);
+@xs-min:  ~'min-width:@{screen-xs-min}'; //assumes xs, sm, md, lg
+@sm-min:  ~'min-width:@{screen-sm-min}'; //assumes     sm, md, lg
+@md-min:  ~'min-width:@{screen-md-min}'; //assumes         md, lg
+@lg-min:  ~'min-width:@{screen-lg-min}'; //assumes             lg
+@xs-max:  ~'max-width:@{media-screen-xs-max}';
+@sm-max:  ~'max-width:@{media-screen-sm-max}';
+@md-max:  ~'max-width:@{media-screen-md-max}';
+@retina:  ~'-webkit-min-device-pixel-ratio:2) and (min-width:@{screen-md-max}), (min-resolution:192dpi) and (min-width:@{screen-md-max}';
+
+
+/**
+ * Grid
+ *
+ * @subpackage _variables.less
+ */
+@grid-gutter-width:       40px;
+@container-tablet:        (720px + (@grid-gutter-width - 10));
+@container-desktop:       (940px + (@grid-gutter-width - 10));
+@container-large-desktop: (1140px + (@grid-gutter-width - 10));
+
+
+/**
+ * Colors
+ *
+ * @subpackage _variables.less
+ */
+@white:         #fff;
+@black:         #000;
+@blue:          #0d9ddb;
+@blue-dark:     #3995d2;
+@green:         #a0d573;
+@red:           #bd624a;
+@orange:        #ffac2a;
+@orange-dark:   #edaf46;
+@logo-gray:     #7d7d7f;
+
+@brand-primary: @blue;
+@brand-warning: @orange;
+@gray-darker:   lighten(@gray-base, 13.5%); // #222
+@gray-dark:     lighten(@gray-base, 20%);   // #333
+@gray:          lighten(@gray-base, 33.5%); // #555
+@gray-light:    lighten(@gray-base, 46.7%); // #777
+@gray-lighter:  lighten(@gray-base, 93.5%); // #eee
+@transparent:   fade(@white, 0);
+
+@body-bg:          @white;
+@text-color:       @logo-gray;
+@link-color:       @brand-primary;
+@link-hover-color: darken(@brand-primary, 15%);
+
+@dark-transparent:  rgba(0,0,0,.8);
+@light-transparent: rgba(255,255,255,.8);
+
+@base-text-shadow: 0  1px 0 fade(@white, 20%);
+@dark-text-shadow: 0 -1px 0 fade(@black, 20%);
+
+@base-transition: ~'all .2s ease';
+@long-transition: ~'all .6s ease';
+
+@time-fast: .2s;
+@time-base: .35s;
+@time-slow: .5s;
+
+
+/**
+ * Typography
+ *
+ * @subpackage _variables.less
+ */
+@font-size-base:   16px;
+@font-size-small:  ceil((@font-size-base * 0.81));
+@line-height-base: 1.6;
+@line-height-small: 1.2;
+
+@font-weight-base: 200;
+@font-weight-bold: 500;
+
+@font-family-sans-serif:  "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-serif:       "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-genericons:  "Genericons";
+@font-family-roboto:      @font-family-sans-serif;
+@font-family-opensans:    @font-family-serif;
+@font-family-base:        @font-family-sans-serif;
+
+@headings-font-family: @font-family-sans-serif;
+@headings-line-height: 94%;
+@headings-font-weight: 100;
+
+@link-hover-decoration: none;
+
+
+/**
+ * Padding
+ *
+ * @subpackage _variables.less
+ */
+@padding-base: 24px;
+@padding-lg:   42px;
+@padding-xl:   60px;
+@padding-sm:   12px;
+@padding-xs:   6px;
+
+
+@padding-base-vertical:     @padding-base/2;
+@padding-base-horizontal:   @padding-base;
+
+@padding-large-vertical:    @padding-base;
+@padding-large-horizontal:  @padding-base*2;
+
+@padding-small-vertical:    @padding-base/3;
+@padding-small-horizontal:  @padding-base/1.5;
+
+@padding-xs-vertical:       @padding-base/8;
+@padding-xs-horizontal:     @padding-base/2;
+
+
+/**
+ * Navbar
+ *
+ * @subpackage _variables.less
+ */
+@navbar-height:                      70px;
+@navbar-default-color:               darken(@text-color, 10%);
+@navbar-default-bg:                  fade(@white, 95%);
+@navbar-default-border:              fade(@gray, 15%);
+@navbar-default-link-color:          darken(@text-color, 10%);
+@navbar-default-link-hover-color:    @gray-dark;
+@navbar-default-link-hover-bg:       @transparent;
+@navbar-default-link-active-color:   @text-color;
+@navbar-default-link-active-bg:      darken(@navbar-default-bg, 6.5%);
+@navbar-default-toggle-hover-bg:     @transparent;
+@navbar-default-toggle-icon-bar-bg:  @gray-dark;
+@navbar-default-toggle-border-color: @transparent;
+
+@navbar-inverse-color:               @white;
+@navbar-inverse-bg:                  fade(@gray-dark, 100%);
+@navbar-inverse-border:              fade(@white, 10%);
+@navbar-inverse-link-color:          lighten(@gray-lighter, 35%);
+@navbar-inverse-link-hover-color:    @white;
+@navbar-inverse-link-hover-bg:       @transparent;
+@navbar-inverse-link-active-color:   @brand-primary;
+@navbar-inverse-link-active-bg:      @transparent;
+@navbar-inverse-toggle-hover-bg:     @transparent;
+@navbar-inverse-toggle-icon-bar-bg:  @white;
+@navbar-inverse-toggle-border-color: @transparent;
+
+
+/**
+ * Nav filter
+ *
+ * @subpackage _variables.less
+ */
+@nav-icon-padding:             20px;
+@nav-filter-link-color:        @text-color;
+@nav-filter-link-bg:           @white;
+@nav-filter-link-hover-bg:     @orange;
+@nav-filter-link-hover-color:  @white;
+@nav-filter-active-link-bg:    @orange;
+@nav-filter-active-link-color: @white;
+
+
+/**
+ * Breadcrumbs
+ *
+ * @subpackage _variables.less
+ */
+@breadcrumb-padding-vertical:   @padding-base;
+@breadcrumb-padding-horizontal: 0;
+@breadcrumb-bg:                 @gray-lighter;
+@breadcrumb-color:              @gray-light;
+@breadcrumb-active-color:       @gray;
+@breadcrumb-separator:          "//";
+
+
+/**
+ * Border radius
+ *
+ * @subpackage _variables.less
+ */
+@border-radius-base:  0;
+@border-radius-large: 0;
+@border-radius-small: 0;
+
+
+/**
+ * Buttons
+ *
+ * @subpackage _variables.less
+ */
+@btn-default-color:  @text-color;
+@btn-default-bg:     @well-bg;
+@btn-default-border: @gray-lighter;
+
+@btn-primary-color:              @white;
+@btn-primary-bg:                 @brand-primary;
+@btn-primary-border:             darken(@brand-primary, 5%);
+
+@btn-success-color:              @white;
+@btn-success-bg:                 @brand-success;
+@btn-success-border:             darken(@brand-success, 5%);
+
+@btn-info-color:                 @white;
+@btn-info-bg:                    @brand-info;
+@btn-info-border:                @transparent;
+
+@btn-warning-color:              @white;
+@btn-warning-bg:                 @brand-warning;
+@btn-warning-border:             darken(@brand-warning, 5%);
+
+@btn-danger-color:               @white;
+@btn-danger-bg:                  @brand-danger;
+@btn-danger-border:              darken(@brand-danger, 5%);
+
+
+/**
+ * Thumbnails
+ *
+ * @subpackage _variables.less
+ */
+@thumbnail-bg:                @white;
+@thumbnail-caption-padding:   (@line-height-computed / 2);
+
+
+/**
+ * Forms
+ *
+ * @subpackage _variables.less
+ */
+@input-bg:                       lighten(@gray-light, 25%);
+@input-bg-disabled:              @gray-lighter;
+@input-color:                    @white;
+@input-border:                   @body-bg;
+@input-border-focus:             @brand-primary;
+@input-color-placeholder:        @well-bg;
+
+@legend-color:                   @white;
+@legend-border-color:            @transparent;
+
+@input-group-addon-bg:           @input-bg;
+@input-group-addon-border-color: @input-border;
+
+
+/**
+ * Tooltips
+ *
+ * @subpackage _variables.less
+ */
+@tooltip-color: @white;
+@tooltip-bg:    @gray-light;

@@ -1,0 +1,21 @@
+{
+  "name": "devinci-boilerplate",
+  "version": "1.0.0",
+  "description": "Boilerplate envisionit theme",
+  "main": "",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-jshint": "^2.0.0",
+    "gulp-less": "^3.0.5",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-util": "^3.0.7",
+    "jshint": "^2.9.1",
+    "jshint-stylish": "^2.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Adam Kelsven <adam.kelsven@envisionitagency.com>",
+  "license": "MIT"
+}
