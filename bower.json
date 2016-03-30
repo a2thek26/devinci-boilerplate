@@ -1,17 +1,18 @@
 {
   "name": "devinci-boilerplate",
-  "description": "Boilerplate envisionit theme",
-  "main": "",
+  "description": "Boilerplate envisionit Bootstrap theme",
+  "main": "src/less/framework.less",
   "authors": [
     "Adam Kelsven <adam.kelsven@envisionitagency.com>"
   ],
   "license": "MIT",
   "moduleType": [],
-  "homepage": "",
+  "homepage": "http:://envisionitagency.com",
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
+    "src/vendor",
     "test",
     "tests"
   ],
