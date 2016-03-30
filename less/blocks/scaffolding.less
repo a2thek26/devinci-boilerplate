@@ -1,8 +1,8 @@
 /**
- * {less} Structure
+ * {less} Scaffolding
  *
+ * The pieces that hold up the page
  * @package Devinci Boilerplate
- * _structure.less
  */
 
 html { overflow-x:hidden;
@@ -13,38 +13,33 @@ html, body { font-weight:@font-weight-base;
 	@media(@sm-min) { font-size:@font-size-base; }
 }
 
+::selection { color:@blue; background:fade(@orange, 10%); }
+*:active, *:focus, *:focus:hover { outline:none; }
+
+
+/**
+ * Elements
+ */
+p { margin: 0 0 ceil(@line-height-computed / 1.4); }
+b, strong { font-weight:@font-weight-bold; }
+a { transition:color @time-base; }
+
 body {
 	cursor: default;
 	padding-top: (@navbar-height + 1);
 	overflow-x: hidden;
+
 	&.modal-open {
 		overflow: hidden;
 	}
 	@media (@sm-max) {
 		font-size: (@font-size-base - 2.5);
-		h1, .h1 {
-			font-size: floor(((@font-size-base - 4) * 2.6));
-		}
-
-		h2, .h2 {
-			font-size: floor(((@font-size-base - 5) * 2.15));
-		}
-
-		h3, .h3 {
-			font-size: floor(((@font-size-base - 4) * 1.7));
-		}
-
-		h4, .h4 {
-			font-size: floor(((@font-size-base - 4) * 1.25));
-		}
-
-		h5, .h5 {
-			font-size: @font-size-base - 1;
-		}
-
-		h6, .h6 {
-			font-size: floor(((@font-size-base - 1) * 0.85));
-		}
+		h1, .h1 { font-size: floor(((@font-size-base - 4) * 2.6)); }
+		h2, .h2 { font-size: floor(((@font-size-base - 5) * 2.15)); }
+		h3, .h3 { font-size: floor(((@font-size-base - 4) * 1.7)); }
+		h4, .h4 { font-size: floor(((@font-size-base - 4) * 1.25)); }
+		h5, .h5 { font-size: @font-size-base - 1; }
+		h6, .h6 { font-size: floor(((@font-size-base - 1) * 0.85)); }
 	}
 
 	/**
