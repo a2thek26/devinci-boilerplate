@@ -7,18 +7,18 @@ var gulp       = require('gulp'),
 gulp.task('default', ['watch']);
 
 gulp.task('jshint', function() {
-	return gulp.src('src/js/**/*.js')
+	return gulp.src('js/**/*.js')
 		.pipe(jshint())
 		.pipe(jshint.reporter('jshint-stylish'));
 });
 
 gulp.task('watch', function() {
-	gulp.watch('src/js/**/*.js', ['jshint']);
-	gulp.watch('src/less/**/*.less', ['less'])
+	gulp.watch('js/**/*.js', ['jshint']);
+	gulp.watch('less/**/*.less', ['less'])
 });
 
 gulp.task('less', function() {
-	return gulp.src('src/less/framework.less')
+	return gulp.src('less/devinci-boilerplate.less')
 		.pipe(sourcemap.init())
 		.pipe(less())
 		.pipe(sourcemap.write('./'))

@@ -1,7 +1,7 @@
 {
   "name": "devinci-boilerplate",
   "description": "Boilerplate envisionit Bootstrap theme",
-  "main": "src/less/framework.less",
+  "main": "less/framework.less",
   "authors": [
     "Adam Kelsven <adam.kelsven@envisionitagency.com>"
   ],
@@ -12,7 +12,7 @@
     "**/.*",
     "node_modules",
     "bower_components",
-    "src/vendor",
+    "vendor",
     "test",
     "tests"
   ],
